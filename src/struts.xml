@@ -28,6 +28,14 @@
     </package>
 
     <package name="struts" namespace="/struts" extends="default">
+        <action name="Form_*" method="{1}" class="struts.Form">
+            <result name="input">/struts/Form.jsp</result>
+            <result name="success">/struts/FormResult.jsp</result>
+        </action>
+        <action name="upload" class="struts.FileUploadAction">
+            <result name="input">/struts/UploadFile.jsp</result>
+            <result name="success">/struts/UploadSuccess.jsp</result>
+        </action>
         <action name="*" class="struts.DefaultSupport">
             <result>/struts/{1}.jsp</result>
         </action>
